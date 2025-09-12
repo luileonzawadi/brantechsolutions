@@ -4,42 +4,39 @@
 :root {
   --brantech-blue: #1f3a93;
   --brantech-green: #47a447;
+  --brantech-light: #f0f9ff;
+  --brantech-accent: #3b82f6;
+  --brantech-secondary: #10b981;
+  --brantech-neutral: #64748b;
   --brantech-dark: #0f172a;
-  --brantech-light: #f8fafc;
 }
 
 /* Global */
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  scroll-behavior: smooth;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  color: #334155;
-  line-height: 1.7;
   margin: 0;
   padding: 0;
+  background: #fff;
+  color: #2d3748;
 }
 
-/* ------------------------
-   Pill Header (Desktop)
-------------------------- */
+/* Pill Header */
 .pill-header {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto 24px auto; /* Remove top margin, reduce bottom margin */
-  padding: 0.7rem 2rem;     /* Reduce vertical padding for compact look */
+  margin: 16px auto 0 auto;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 9999px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
-
-  transition: all 0.3s ease;
+  padding: 0.7rem 2rem;
   position: relative;
   z-index: 100;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 .pill-header:hover {
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
@@ -54,8 +51,6 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.logo-container:hover { transform: scale(1.05); }
-
 .logo-container img.logo {
   width: 32px;
   height: 32px;
@@ -79,7 +74,7 @@ body {
 /* Desktop Nav Links */
 .nav-links {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .nav-links a {
   font-size: 0.95rem;
@@ -91,17 +86,18 @@ body {
   background: #f1f5f9;
   transition: all 0.25s ease;
   position: relative;
+  display: inline-block;
 }
 .nav-links a:hover,
 .nav-links a.active {
-  background: var(--brantech-blue);
-  color: #fff;
+  background: var(--brantech-blue) !important;
+  color: #fff !important;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(31,58,147,0.08);
   transform: translateY(-1px);
 }
 
-/* Call-to-action button */
+/* Call-to-action button (if used) */
 .header-cta {
   background: var(--brantech-green);
   color: #fff;
@@ -115,15 +111,14 @@ body {
   font-size: 0.95rem;
   border: none;
   cursor: pointer;
+  display: inline-block;
 }
 .header-cta:hover {
   background: #38a169;
   color: #fffbe6;
 }
 
-/* ------------------------
-   Mobile Nav (Dropdown)
-------------------------- */
+/* Hamburger */
 .hamburger {
   display: none;
   background: none;
@@ -137,7 +132,7 @@ body {
   color: #475569;
 }
 
-/* Hidden by default */
+/* Mobile Nav */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -146,13 +141,11 @@ body {
   top: 60px;
   right: 10px;
   width: 220px;
-
   background: white;
   border-radius: 14px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   border: 1px solid #f1f5f9;
   padding: 14px;
-
   animation: dropDown 0.3s ease forwards;
   z-index: 1000;
 }
@@ -166,75 +159,95 @@ body {
   font-size: 15px;
   transition: all 0.2s ease;
 }
-.mobile-nav a:hover {
-  background-color: #f8fafc;
-  color: var(--brantech-blue);
-}
+.mobile-nav a:hover,
 .mobile-nav a.active {
   background: var(--brantech-blue);
   color: #fff;
 }
 .mobile-nav.open {
-  display: flex;
+  display: flex !important;
 }
-
 @keyframes dropDown {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ------------------------
-   Responsive
-------------------------- */
+/* Responsive Styles */
 @media (max-width: 900px) {
   .pill-header {
     padding: 0.5rem 1rem;
-    max-width: 98vw;
-  }
-  .nav-links {
-    gap: 0.25rem;
-  }
-  .header-cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
+    max-width: 100vw;
+    width: 100vw;
+    box-sizing: border-box;
   }
 }
-
 @media (max-width: 768px) {
   .pill-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 0.5rem 0.5rem;
     margin-bottom: 12px;
+    min-width: 0;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    gap: 0.5rem;
   }
   .logo-container {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    justify-content: flex-start;
+    width: 100%;
   }
   .nav-links {
-    display: none;
+    display: none !important;
   }
   .hamburger {
-    display: block;
+    display: block !important;
     margin-left: auto;
+    margin-right: 0;
+    z-index: 1100;
   }
   .header-cta {
     width: 100%;
     margin-top: 0.5rem;
     text-align: center;
   }
-}
-
-@media (max-width: 480px) {
-  .pill-header {
-    padding: 0.3rem 0.3rem;
+  .mobile-nav {
+    top: 56px;
+    padding: 10px 4vw;
+    border-radius: 0 0 14px 14px;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    min-width: 140px;
     max-width: 100vw;
   }
+}
+@media (max-width: 480px) {
+  .pill-header {
+    padding: 0.2rem 0.1rem;
+    max-width: 100vw;
+    width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+    gap: 0.3rem;
+  }
   .logo-container img.logo {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
   .brand {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+  }
+  .mobile-nav {
+    top: 48px;
+    padding: 6px 2vw;
+    min-width: 100px;
+    max-width: 100vw;
+  }
+  .mobile-nav a {
+    font-size: 13px;
+    padding: 8px;
   }
 }
