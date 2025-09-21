@@ -21,15 +21,34 @@
 
   <!-- Tech Hero Section -->
   <section class="tech-hero-section">
-    <div class="tech-grid-bg"></div>
-    <div class="tech-floating-1"></div>
+    <div class="tech-grid-bg"><svg class="w-screen h-screen" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Keep boxes small -->
+    <pattern id="circuit" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <!-- Outer square -->
+      <rect x="5" y="5" width="40" height="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      
+      <!-- Nodes -->
+      <circle cx="12" cy="12" r="2" fill="currentColor"/>
+      <circle cx="38" cy="38" r="2" fill="currentColor"/>
+      
+      <!-- Connection -->
+      <path d="M12 12L38 38" stroke="currentColor" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Fill entire viewport with repeating pattern -->
+  <rect width="100%" height="100%" fill="url(#circuit)" opacity="0.5"/>
+</svg>
+</div>
+    <!-- <div class="tech-floating-1"></div> -->
     <div class="tech-floating-2"></div>
     <div class="tech-gradient"></div>
     <div class="tech-hero-content">
       <div class="animate__animated animate__fadeInLeft">
         <div class="tech-hero-badge">
           <i class="fas fa-users-cog tech-hero-icon"></i>
-          <span class="tech-hero-badge-text">Our Story</span>
+          <span class="tech-hero-badge-text">Who We Are</span>
         </div>
         <h1 class="tech-hero-title">
           About <span class="tech-hero-title-highlight">BranTech</span>
@@ -73,12 +92,9 @@
   <!-- Values Section -->
   <section class="values-section">
     <div class="values-container">
-      <h2 class="values-title">
-        Our 
-        <span class="values-title-highlight">
-          Values
-        </span>
-      </h2>
+        <h2 class="values-title">
+          Our Values<span class="values-title-highlighted"></span>
+        </h2>
       <p class="values-desc">
         At BranTech, our core values guide everything we do and shape our commitment to excellence.
       </p>
@@ -124,57 +140,102 @@
   </section>
 
   <!-- Team Section -->
-  <section class="team-section">
-    <div class="team-container">
-      <h2 class="team-title">
-        Meet the <span class="team-title-highlight">Team</span>
-      </h2>
-      <div class="team-grid">
-        <!-- Leon -->
-        <div class="team-card">
+ <section class="team-section">
+  <div class="team-container">
+    <h2 class="team-title">
+      Meet the <span class="team-title-highlight">Team</span>
+    </h2>
+    <div class="team-grid">
+      
+      <!-- Leon -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
           <img src="images/leon pic.jpg" alt="Leon Musungu" class="team-img team-img-blue">
-          <h3 class="team-name">Leon Musungu</h3>
-          <p class="team-role team-role-blue">Founder</p>
+          <div class="role-icon-circle role-blue">
+            <i class="fa-solid fa-user-astronaut"></i>          
+          </div>
         </div>
-        <!-- Mwende -->
-        <div class="team-card">
-          <img src="images/Neema .jpg" alt="Esther Mwende" class="team-img team-img-green">
-          <h3 class="team-name">Neema Kerubo</h3>
-          <p class="team-role team-role-green"></p>
-        </div>
-         <!-- Mwende -->
-        <div class="team-card">
-          <img src="images/Junior.jpg" alt="Esther Mwende" class="team-img team-img-green">
-          <h3 class="team-name">James Kariuki</h3>
-          <p class="team-role team-role-green">Dev team Lead</p>
-        </div>
-        <!-- James -->
-        <div class="team-card">
-          <img src="images/reuk.jpg" alt="James Ng'ang'a" class="team-img team-img-purple">
-          <h3 class="team-name">Reuben</h3>
-          <p class="team-role team-role-purple">Lead, Brand Strategy</p>
-        </div>
-        <!-- Bilha -->
-        <div class="team-card">
-          <img src="images/Bilha.jpg" alt="Bilha Ndung'u" class="team-img team-img-orange">
-          <h3 class="team-name">Bilha Ndung'u</h3>
-          <p class="team-role team-role-orange">Marketing Lead</p>
-        </div>
-        <!-- Edward -->
-        <div class="team-card">
-          <img src="images/nganga 1.jpg" alt="Edward Ng'ang'a" class="team-img team-img-indigo">
-          <h3 class="team-name">Edward Ng'ang'a</h3>
-          <p class="team-role team-role-indigo">Backend Developer</p>
-        </div>
-        <!-- Ibrahim -->
-        <div class="team-card">
-          <img src="images/Mwangi pic.jpg" alt="Ibrahim Mwangi" class="team-img team-img-teal">
-          <h3 class="team-name">Ibrahim Mwangi</h3>
-          <p class="team-role team-role-teal">Frontend Developer</p>
-        </div>
+        <h3 class="team-name">Leon Musungu</h3>
+        <p class="team-role team-role-blue">Founder</p>
       </div>
+
+      <!-- Neema -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/Neema .jpg" alt="Neema Ogao" class="team-img team-img-green">
+          <div class="role-icon-circle role-green">
+            <i class="fas fa-code"></i>
+          </div>
+        </div>
+        <h3 class="team-name">Neema Ogao</h3>
+        <p class="team-role team-role-green">Frontend Developer</p>
+      </div>
+
+      <!-- James -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/Junior.jpg" alt="James Kariuki" class="team-img team-img-blue2">
+          <div class="role-icon-circle role-blue2">
+            <i class="fas fa-users-cog"></i>
+          </div>
+        </div>
+        <h3 class="team-name">James Kariuki</h3>
+        <p class="team-role team-role-blue2">Dev Team Lead</p>
+      </div>
+
+      <!-- Reuben -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/reuk.jpg" alt="Reuben" class="team-img team-img-green2">
+          <div class="role-icon-circle role-green2">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+        </div>
+        <h3 class="team-name">Reuben</h3>
+        <p class="team-role team-role-green2">Lead, Brand Strategy</p>
+      </div>
+
+      <!-- Bilha -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/Bilha.jpg" alt="Bilha Ndung'u" class="team-img team-img-teal">
+          <div class="role-icon-circle role-teal">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+        </div>
+        <h3 class="team-name">Bilha Ndung'u</h3>
+        <p class="team-role team-role-teal">Marketing Lead</p>
+      </div>
+
+      <!-- Edward -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/nganga 1.jpg" alt="Edward Ng'ang'a" class="team-img team-img-green3">
+          <div class="role-icon-circle role-green">
+            <i class="fas fa-server"></i>
+          </div>
+        </div>
+        <h3 class="team-name">Edward Ng'ang'a</h3>
+        <p class="team-role team-role-green">Backend Developer</p>
+      </div>
+
+      <!-- Ibrahim -->
+      <div class="team-card">
+        <div class="team-img-wrapper">
+          <img src="images/Mwangi pic.jpg" alt="Ibrahim Mwangi" class="team-img team-img-indigo">
+          <div class="role-icon-circle role-blue">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+        </div>
+        <h3 class="team-name">Ibrahim Mwangi</h3>
+        <p class="team-role team-role-blue">Frontend Developer</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <div id="footer"></div>
