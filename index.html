@@ -379,6 +379,109 @@
       .magic-cursor, .cursor-trail { display: none; }
       .magic-hero { height: 80vh; }
       .glass-panel { padding: 1.5rem; }
+      
+      /* Mobile grid fixes */
+      .grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+      }
+      
+      /* Ensure all grid items are visible */
+      .grid > * {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      /* Ensure service cards are visible on mobile */
+      .service-3d {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        transform: none !important;
+        perspective: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: auto !important;
+      }
+      
+      .service-card {
+        width: 100% !important;
+        padding: 1.5rem !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        transform: none !important;
+        transform-style: flat !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: auto !important;
+      }
+      
+      /* Disable 3D effects on mobile to prevent overlapping */
+      .service-card:hover {
+        transform: none !important;
+      }
+      
+      .service-card::before {
+        display: none !important;
+      }
+      
+      /* Force show all service cards */
+      .service-3d:nth-child(1),
+      .service-3d:nth-child(2),
+      .service-3d:nth-child(3),
+      .service-3d:nth-child(4) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+      }
+      
+      /* Mobile text sizing */
+      .text-4xl {
+        font-size: 2rem !important;
+      }
+      
+      .text-3xl {
+        font-size: 1.75rem !important;
+      }
+      
+      /* Ensure cards don't overflow */
+      .parallax-content {
+        padding: 1rem !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+      
+      /* Fix glass panel overlapping */
+      .glass-panel {
+        position: relative !important;
+        z-index: 1 !important;
+        margin: 1rem 0 !important;
+        transform: none !important;
+      }
+      
+      /* Disable parallax effects on mobile */
+      .parallax-bg {
+        transform: none !important;
+        position: static !important;
+      }
+      
+      .parallax-section {
+        transform: none !important;
+        position: relative !important;
+      }
     }
   </style>
 </head>
@@ -416,7 +519,7 @@
           Our <span style="background: linear-gradient(45deg, var(--magic-blue), var(--magic-teal)); -webkit-background-clip: text; background-clip: text; color: transparent;">Magical</span> Services
         </h2>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Web Development -->
           <div class="service-3d">
             <div class="service-card">
@@ -485,7 +588,7 @@
           Our <span style="background: linear-gradient(45deg, var(--magic-teal), var(--magic-violet)); -webkit-background-clip: text; background-clip: text; color: transparent;">Achievements</span>
         </h2>
         
-        <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div class="service-3d">
             <div class="service-card">
               <div class="text-4xl font-bold mb-2" style="color: var(--magic-blue);">150+</div>
