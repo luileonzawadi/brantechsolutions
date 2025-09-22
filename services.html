@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Services | BranTech Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="header-styles.css"/>
+  <link rel="stylesheet" href="styles2.css"/>
+  <style>
+    :root {
+      --brantech-blue: #2563eb;
+      --brantech-green: #10b981;
+      --brantech-purple: #8b5cf6;
+      --brantech-orange: #f97316;
+      --brantech-light: #f0f9ff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .service-card-inner {
+      transition: all 0.5s ease;
+    }
+    
+    .service-card:hover .service-card-inner {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(37, 99, 235, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <div id="header"></div>
+
+  <!-- Tech Hero Section -->
+  <section class="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 text-white overflow-hidden min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] flex items-center" style="background: #0f172a; margin-top: 20px;">
+    <!-- Circuit Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1000 1000">
+        <defs>
+          <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M10 10h80v80h-80z" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+            <path d="M20 20L80 80" stroke="currentColor" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#circuit)"/>
+      </svg>
+    </div>
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 left-10 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
+      <div class="absolute bottom-32 right-20 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+      <div class="absolute top-1/3 right-1/4 w-6 h-6 border border-cyan-400 rounded-full animate-spin" style="animation-duration: 3s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="animate__animated animate__fadeInUp">
+        <div class="inline-flex items-center px-4 py-2 bg-cyan-500/20 rounded-full mb-6 border border-cyan-500/30">
+          <i class="fas fa-cogs text-cyan-400 mr-2"></i>
+          <span class="text-cyan-300 text-sm font-medium">Advanced Solutions</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">Our <span class="text-cyan-400">Signature</span> Services</h1>
+        <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 opacity-90 max-w-3xl">
+          Where innovation meets execution - premium solutions tailored to your digital transformation journey.
+        </p>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
+          <a href="#services" class="bg-white text-[color:var(--brantech-blue)] px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg hover:shadow-xl text-center text-sm sm:text-base">
+            Explore Services
+          </a>
+          <a href="contacts.html" class="border-2 border-white text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-white hover:text-[color:var(--brantech-blue)] transition text-center text-sm sm:text-base">
+            Get Custom Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=10')] bg-cover bg-center opacity-5 -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20 animate__animated animate__fadeIn">
+        <span class="inline-block px-3 sm:px-4 py-1 bg-[color:var(--brantech-green)]/10 text-[color:var(--brantech-green)] rounded-full mb-3 sm:mb-4 font-medium text-sm sm:text-base">What We Excel At</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Crafting Digital <span class="text-[color:var(--brantech-blue)]">Excellence</span></h2>
+        <p class="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4 sm:px-0">
+          Each service is meticulously designed to deliver measurable results and exceptional user experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+        <!-- First Column -->
+        <div class="space-y-6 sm:space-y-8 md:space-y-10">
+          <!-- Web Design & Development -->
+          <div class="service-card group">
+            <div class="service-card-inner h-full bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-cyan-200/30 transition-all duration-500 relative">
+              <div class="absolute top-0 left-0 w-full h-1 bg-cyan-400"></div>
+              <div class="relative overflow-hidden h-48">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Development" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <div class="service-icon bg-[color:var(--brantech-blue)] text-white p-4 rounded-xl shadow-xl inline-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 4l-4 4 4 4" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Web Design & Development</h3>
+                <p class="text-gray-70 mb-6">
+                  Bespoke digital experiences engineered for performance, accessibility, and conversion optimization.
+                </p>
+                <ul class="space-y-2 mb-6 text-gray-600">
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Responsive & mobile-first design
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    E-commerce solutions
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    CMS integration
+                  </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-[color:var(--brantech-blue)] font-semibold hover:text-[color:var(--brantech-green)]">
+                  Explore case studies
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mobile Development -->
+          <div class="service-card group">
+            <div class="service-card-inner h-full bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-orange-200/30 transition-all duration-500 relative">
+              <div class="absolute top-0 left-0 w-full h-1 bg-orange-400"></div>
+              <div class="relative overflow-hidden h-48">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile Development" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <div class="service-icon bg-[color:var(--brantech-orange)] text-white p-4 rounded-xl shadow-xl inline-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Mobile App Development</h3>
+                <p class="text-gray-700 mb-6">
+                  Native and cross-platform applications built for iOS and Android with focus on user experience and performance.
+                </p>
+                <ul class="space-y-2 mb-6 text-gray-600">
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    iOS & Android development
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Cross-platform solutions
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    App store deployment
+                  </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-[color:var(--brantech-orange)] font-semibold hover:text-[color:var(--brantech-green)]">
+                  Explore case studies
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="space-y-6 sm:space-y-8 md:space-y-10">
+          <!-- Digital Strategy -->
+          <div class="service-card group">
+            <div class="service-card-inner h-full bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-blue-200/30 transition-all duration-500 relative">
+              <div class="absolute top-0 left-0 w-full h-1 bg-blue-400"></div>
+              <div class="relative overflow-hidden h-48">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Strategy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <div class="service-icon bg-[color:var(--brantech-blue)] text-white p-4 rounded-xl shadow-xl inline-flex">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Digital Strategy</h3>
+                <p class="text-gray-700 mb-6">
+                  Data-driven digital roadmaps that align technology with business objectives for measurable growth.
+                </p>
+                <ul class="space-y-2 mb-6 text-gray-600">
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Market analysis & research
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Conversion optimization
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Data-driven decision making
+                  </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-[color:var(--brantech-blue)] font-semibold hover:text-[color:var(--brantech-green)]">
+                  Explore case studies
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Branding & Identity -->
+          <div class="service-card group">
+            <div class="service-card-inner h-full bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-purple-200/30 transition-all duration-500 relative">
+              <div class="absolute top-0 left-0 w-full h-1 bg-purple-400"></div>
+              <div class="relative overflow-hidden h-48">
+                <img src="https://images.unsplash.com/photo-1567446537738-74804ee3a9bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Branding & Identity" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <div class="service-icon bg-[color:var(--brantech-purple)] text-white p-4 rounded-xl shadow-xl inline-flex">
+                    <i class="fas fa-palette text-2xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Branding & Identity</h3>
+                <p class="text-gray-700 mb-6">
+                  Comprehensive branding solutions that communicate your unique value and connect with your audience.
+                </p>
+                <ul class="space-y-2 mb-6 text-gray-600">
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin"round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Logo & identity design
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Brand guidelines
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-[color:var(--brantech-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Visual storytelling
+                  </li>
+                </ul>
+                <a href="#" class="inline-flex items-center text-[color:var(--brantech-purple)] font-semibold hover:text-[color:var(--brantech-green)]">
+                  Explore case studies
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 px-6 bg-[color:var(--brantech-light)]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-1 bg-[color:var(--brantech-blue)]/10 text-[color:var(--brantech-blue)] rounded-full mb-4 font-medium">Our Methodology</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The BranTech <span class="text-[color:var(--brantech-green)]">Process</span></h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          A proven framework that delivers exceptional results at every stage of your project.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 mx-auto mb-4 bg-[color:var(--brantech-blue)]/10 text-[color:var(--brantech-blue)] rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+          <h3 class="text-xl font-semibold mb-3">Discovery</h3>
+          <p class="text-gray-600">Deep dive into your business objectives and audience needs.</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 mx-auto mb-4 bg-[color:var(--brantech-blue)]/10 text-[color:var(--brantech-blue)] rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+          <h3 class="text-xl font-semibold mb-3">Strategy</h3>
+          <p class="text-gray-600">Data-backed planning tailored to your unique position.</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 mx-auto mb-4 bg-[color:var(--brantech-blue)]/10 text-[color:var(--brantech-blue)] rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+          <h3 class="text-xl font-semibold mb-3">Execution</h3>
+          <p class="text-gray-600">Precision implementation with agile methodologies.</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 mx-auto mb-4 bg-[color:var(--brantech-blue)]/10 text-[color:var(--brantech-blue)] rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+          <h3 class="text-xl font-semibold mb-3">Optimization</h3>
+          <p class="text-gray-600">Continuous improvement based on performance metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto bg-[color:var(--brantech-blue)] rounded-2xl p-10 text-center text-white shadow-xl relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=10')] bg-cover bg-center opacity-10"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Elevate Your Digital Presence?</h2>
+        <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          Let's craft a solution that propels your business forward.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="contacts.html" class="bg-white text-[color:var(--brantech-blue)] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg hover:shadow-xl">
+            Schedule Consultation
+          </a>
+          <a href="tel:+254704894220" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[color:var(--brantech-blue)] transition">
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+  <script src="components.js"></script>
+</body>
+</html>
