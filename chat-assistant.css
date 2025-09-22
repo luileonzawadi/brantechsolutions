@@ -26,6 +26,14 @@
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Ensure main content doesn't get covered by chat button */
+@media (max-width: 768px) {
+  /* Add bottom padding to prevent content from being hidden behind chat button */
+  body {
+    padding-bottom: 100px;
+  }
+}
+
 /* Floating Chat Button */
 .chat-toggle {
   width: 60px;
@@ -499,48 +507,101 @@
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .chat-assistant {
     bottom: 15px;
     right: 15px;
+    z-index: 1001; /* Ensure it's above other content */
   }
   
   .chat-toggle {
     width: 56px;
     height: 56px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
   
   .chat-window {
-    width: calc(100vw - 30px);
-    height: calc(100vh - 100px);
-    bottom: 80px;
-    right: 15px;
-    left: 15px;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
     max-width: none;
+    max-height: none;
+    position: fixed;
+    border-radius: 0;
   }
   
   .chat-messages {
     padding: 16px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
   }
   
   .message-content {
-    max-width: 240px;
+    max-width: calc(100vw - 120px);
   }
   
   .welcome-text {
-    max-width: 220px;
+    max-width: calc(100vw - 120px);
+  }
+  
+  /* Ensure chat doesn't interfere with page content */
+  body.chat-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-assistant {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .chat-toggle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chat-window {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    max-height: none;
+    border-radius: 0;
+  }
+  
+  .chat-messages {
+    padding: 12px;
+    max-height: calc(100vh - 140px);
+  }
+  
+  .message-content {
+    max-width: calc(100vw - 100px);
+  }
+  
+  .welcome-text {
+    max-width: calc(100vw - 100px);
   }
 }
 
 @media (max-width: 360px) {
   .chat-window {
-    width: calc(100vw - 20px);
-    right: 10px;
-    left: 10px;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 0;
   }
   
   .message-content {
-    max-width: 200px;
+    max-width: calc(100vw - 80px);
   }
   
   .welcome-text {

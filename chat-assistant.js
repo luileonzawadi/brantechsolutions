@@ -104,6 +104,18 @@ class ChatAssistant {
         this.closeChat();
       }
     });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (this.isOpen) {
+        // Update body class based on current screen size
+        if (window.innerWidth <= 768) {
+          document.body.classList.add('chat-open');
+        } else {
+          document.body.classList.remove('chat-open');
+        }
+      }
+    });
   }
 
   /**
@@ -127,6 +139,11 @@ class ChatAssistant {
     this.chatInput.focus();
     this.hideNotification();
     this.scrollToBottom();
+    
+    // Prevent body scrolling on mobile when chat is open
+    if (window.innerWidth <= 768) {
+      document.body.classList.add('chat-open');
+    }
   }
 
   /**
@@ -136,6 +153,9 @@ class ChatAssistant {
     this.isOpen = false;
     this.chatWindow.classList.remove('open');
     this.chatToggle.style.transform = 'scale(1)';
+    
+    // Restore body scrolling when chat is closed
+    document.body.classList.remove('chat-open');
   }
 
   /**
