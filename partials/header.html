@@ -102,6 +102,7 @@
     <a href="about.html" data-page="about"><i class="fas fa-info-circle"></i><span>About</span></a>
     <a href="services.html" data-page="services"><i class="fas fa-cogs"></i><span>Services</span></a>
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i><span>Blog</span></a>
+    <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </div>
 
@@ -112,6 +113,7 @@
     <a href="about.html" data-page="about"><i class="fas fa-info-circle"></i>About</a>
     <a href="services.html" data-page="services"><i class="fas fa-cogs"></i>Services</a>
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i>Blog</a>
+    <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i>FAQ</a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i>Contact</a>
   </div>
 </nav>
@@ -152,7 +154,7 @@
 
     // Active page highlight
     const currentPage = (window.location.pathname.split('/').pop() || 'index.html').replace('.html','');
-    const pageMap = { index: 'home', about: 'about', services: 'services', blog: 'blog', contacts: 'contact' };
+    const pageMap = { index: 'home', about: 'about', services: 'services', blog: 'blog', faq: 'faq', contacts: 'contact' };
     const activePage = pageMap[currentPage] || 'home';
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link){
       if (link.dataset.page === activePage) link.classList.add('active');
