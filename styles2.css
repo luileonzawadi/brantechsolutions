@@ -288,11 +288,10 @@ html, body {
 
 /* === HERO SECTION === */
 .hero-gradient {
-  background: linear-gradient(135deg, var(--brantech-blue) 0%, #2563eb 50%, var(--brantech-green) 100%);
+  background: var(--brantech-blue);
   color: white;
   position: relative;
   overflow: hidden;
-  text-shadow: 0px 4px 12px rgba(0,0,0,0.3);
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
@@ -323,10 +322,10 @@ html, body {
 
 /* === CTA SECTION === */
 .cta-box {
-  background: linear-gradient(90deg, var(--brantech-blue) 0%, var(--brantech-green) 100%);
+  background: var(--brantech-blue);
   color: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(31,58,147,0.10);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   padding: 2.5rem 2rem;
   text-align: center;
   margin: 2rem auto;
@@ -367,7 +366,7 @@ html, body {
 
 /* === STATS SECTION === */
 .stats-section {
-  background: linear-gradient(135deg, var(--brantech-blue) 0%, var(--brantech-green) 100%);
+  background: var(--brantech-blue);
   color: #fff;
   padding: 4rem 1.5rem;
   text-align: center;
@@ -676,7 +675,7 @@ img,
   padding: 3.3rem 4rem;
   color: #fff;
   overflow: hidden;
-  background: #0f172a;
+  background: #1a1a2e;
   margin-top: 10px;
 }
 .tech-grid-bg {
@@ -1130,7 +1129,7 @@ img,
 
 /* === FOOTER === */
 footer {
-  background: linear-gradient(135deg, var(--footer-dark) 0%, #1e293b 100%);
+  background: var(--footer-dark);
   color: #e2e8f0;
   padding-top: 4rem;
   position: relative;

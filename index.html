@@ -45,11 +45,11 @@
     
     
     body {
-      background: linear-gradient(135deg, var(--magic-dark) 0%, #1a1a2e 50%, #16213e 100%);
+      background: #1a1a2e;
       color: var(--magic-text);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
-      cursor: none;
+      cursor: auto;
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -148,10 +148,8 @@
       font-family: 'Orbitron', monospace;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 900;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      color: #ffffff;
+      text-align: center;
       margin-bottom: 2rem;
     }
     
@@ -169,11 +167,7 @@
     }
     
     .magical-glow {
-      background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: magicalPulse 3s ease-in-out infinite alternate;
+      color: var(--magic-blue);
     }
     
     @keyframes magicalPulse {
@@ -276,157 +270,6 @@
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotateY(0deg); }
       50% { transform: translateY(-10px) rotateY(180deg); }
-    }
-    
-    /* Cube Icon */
-    .icon-cube {
-      width: 80px;
-      height: 80px;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: rotateCube 4s linear infinite;
-    }
-    
-    @keyframes rotateCube {
-      0% { transform: rotateX(0deg) rotateY(0deg); }
-      100% { transform: rotateX(360deg) rotateY(360deg); }
-    }
-    
-    .cube-face {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(45deg, #00ffff, #0080ff);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .cube-face.front { transform: rotateY(0deg) translateZ(40px); }
-    .cube-face.back { transform: rotateY(180deg) translateZ(40px); }
-    .cube-face.right { transform: rotateY(90deg) translateZ(40px); }
-    .cube-face.left { transform: rotateY(-90deg) translateZ(40px); }
-    .cube-face.top { transform: rotateX(90deg) translateZ(40px); }
-    .cube-face.bottom { transform: rotateX(-90deg) translateZ(40px); }
-    
-    /* Sphere Icon */
-    .icon-sphere {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #8000ff, #0080ff);
-      position: relative;
-      animation: pulseSphere 2s ease-in-out infinite;
-    }
-    
-    @keyframes pulseSphere {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    
-    .sphere-glow {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(128, 0, 255, 0.3), transparent);
-      animation: sphereGlow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes sphereGlow {
-      0% { opacity: 0.3; }
-      100% { opacity: 0.8; }
-    }
-    
-    /* Pyramid Icon */
-    .icon-pyramid {
-      width: 80px;
-      height: 80px;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: rotatePyramid 3s linear infinite;
-    }
-    
-    @keyframes rotatePyramid {
-      0% { transform: rotateY(0deg); }
-      100% { transform: rotateY(360deg); }
-    }
-    
-    .pyramid-face {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-    }
-    
-    .pyramid-face.front {
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 80px solid #00ff80;
-      transform: translateZ(20px);
-    }
-    
-    .pyramid-face.back {
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 80px solid #00ff80;
-      transform: translateZ(-20px) rotateY(180deg);
-    }
-    
-    .pyramid-face.left {
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 80px solid #00ff80;
-      transform: rotateY(-90deg) translateZ(20px);
-    }
-    
-    .pyramid-face.right {
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 80px solid #00ff80;
-      transform: rotateY(90deg) translateZ(20px);
-    }
-    
-    /* Phone Icon */
-    .icon-phone {
-      width: 50px;
-      height: 80px;
-      background: linear-gradient(45deg, #ff8000, #ff4000);
-      border-radius: 10px;
-      position: relative;
-      animation: phoneShake 2s ease-in-out infinite;
-    }
-    
-    @keyframes phoneShake {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      75% { transform: rotate(-5deg); }
-    }
-    
-    .phone-screen {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      background: #000;
-      border-radius: 6px;
-    }
-    
-    .phone-glow {
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      background: radial-gradient(circle, rgba(255, 128, 0, 0.3), transparent);
-      border-radius: 15px;
-      animation: phoneGlow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes phoneGlow {
-      0% { opacity: 0.3; }
-      100% { opacity: 0.8; }
     }
     
     /* Service Text */
@@ -679,12 +522,7 @@
       font-family: 'Orbitron', monospace;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 900;
-      background: linear-gradient(45deg, var(--magic-blue), var(--magic-teal), var(--magic-violet));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 30px var(--magic-glow);
-      animation: logoGlow 3s ease-in-out infinite alternate;
+      color: #ffffff;
       margin-bottom: 1rem;
     }
     
@@ -1056,63 +894,7 @@
         margin-bottom: 1.5rem;
       }
       
-      .icon-cube, .icon-sphere, .icon-pyramid, .icon-phone {
-        width: 60px;
-        height: 60px;
-      }
-      
-      .cube-face {
-        width: 60px;
-        height: 60px;
-      }
-      
-      .cube-face.front { transform: rotateY(0deg) translateZ(30px); }
-      .cube-face.back { transform: rotateY(180deg) translateZ(30px); }
-      .cube-face.right { transform: rotateY(90deg) translateZ(30px); }
-      .cube-face.left { transform: rotateY(-90deg) translateZ(30px); }
-      .cube-face.top { transform: rotateX(90deg) translateZ(30px); }
-      .cube-face.bottom { transform: rotateX(-90deg) translateZ(30px); }
-      
-      .pyramid-face.front {
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 60px solid #00ff80;
-        transform: translateZ(15px);
-      }
-      
-      .pyramid-face.back {
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 60px solid #00ff80;
-        transform: translateZ(-15px) rotateY(180deg);
-      }
-      
-      .pyramid-face.left {
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 60px solid #00ff80;
-        transform: rotateY(-90deg) translateZ(15px);
-      }
-      
-      .pyramid-face.right {
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 60px solid #00ff80;
-        transform: rotateY(90deg) translateZ(15px);
-      }
-      
-      .icon-phone {
-        width: 40px;
-        height: 60px;
-      }
-      
-      .phone-screen {
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-        border-radius: 4px;
-      }
+
       
       .service-title-3d {
         font-size: 1.25rem;
@@ -1595,13 +1377,8 @@
               <div class="card-glow"></div>
               <div class="card-content">
                 <div class="service-icon-3d">
-                  <div class="icon-cube">
-                    <div class="cube-face front"></div>
-                    <div class="cube-face back"></div>
-                    <div class="cube-face right"></div>
-                    <div class="cube-face left"></div>
-                    <div class="cube-face top"></div>
-                    <div class="cube-face bottom"></div>
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-code text-2xl"></i>
                   </div>
                 </div>
                 <h3 class="service-title-3d">Web Development</h3>
@@ -1616,8 +1393,8 @@
               <div class="card-glow"></div>
               <div class="card-content">
                 <div class="service-icon-3d">
-                  <div class="icon-sphere">
-                    <div class="sphere-glow"></div>
+                  <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-palette text-2xl"></i>
                   </div>
                 </div>
                 <h3 class="service-title-3d">Branding</h3>
@@ -1632,11 +1409,8 @@
               <div class="card-glow"></div>
               <div class="card-content">
                 <div class="service-icon-3d">
-                  <div class="icon-pyramid">
-                    <div class="pyramid-face front"></div>
-                    <div class="pyramid-face back"></div>
-                    <div class="pyramid-face left"></div>
-                    <div class="pyramid-face right"></div>
+                  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-chart-line text-2xl"></i>
                   </div>
                 </div>
                 <h3 class="service-title-3d">Digital Strategy</h3>
@@ -1651,13 +1425,28 @@
               <div class="card-glow"></div>
               <div class="card-content">
                 <div class="service-icon-3d">
-                  <div class="icon-phone">
-                    <div class="phone-screen"></div>
-                    <div class="phone-glow"></div>
+                  <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-mobile-alt text-2xl"></i>
                   </div>
                 </div>
                 <h3 class="service-title-3d">Mobile Apps</h3>
                 <p class="service-desc-3d">Cross-platform applications with modern features and performance.</p>
+                <div class="service-glow-line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Server Configurations Card -->
+          <div class="service-3d-card" data-service="server">
+            <div class="card-3d-container">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="service-icon-3d">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-server text-2xl"></i>
+                  </div>
+                </div>
+                <h3 class="service-title-3d">Server Configurations</h3>
+                <p class="service-desc-3d">Professional server setup and management for hosting and development environments.</p>
                 <div class="service-glow-line"></div>
               </div>
             </div>
@@ -1851,6 +1640,7 @@
   </div>
 
   <script src="components.js"></script>
+  <script src="blog-integration.js"></script>
   
   <script>
     // 3D Scene with Three.js

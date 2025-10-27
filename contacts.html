@@ -33,7 +33,7 @@
     }
     
     body {
-      background: linear-gradient(135deg, var(--magic-dark) 0%, #1a1a2e 50%, #16213e 100%);
+      background: #1a1a2e;
       color: var(--magic-text);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
@@ -49,6 +49,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding-top: 80px;
     }
     
     .contact-canvas {
@@ -72,15 +73,12 @@
       font-family: 'Orbitron', monospace;
       font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 900;
+      color: #ffffff;
       margin-bottom: 1rem;
     }
     
     .magical-glow {
-      background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: magicalPulse 3s ease-in-out infinite alternate;
+      color: var(--magic-blue);
     }
     
     @keyframes magicalPulse {
@@ -96,9 +94,8 @@
     
     .glass-panel {
       background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
+      border-radius: 12px;
       padding: 2rem;
       position: relative;
       overflow: hidden;
@@ -116,9 +113,9 @@
     }
     
     .glass-panel:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-      border-color: var(--magic-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
     }
     
     /* Futuristic Form Styles */

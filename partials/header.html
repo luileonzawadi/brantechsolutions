@@ -104,6 +104,7 @@
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i><span>Blog</span></a>
     <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="#" onclick="showAdminLogin()" data-page="admin"><i class="fas fa-shield-alt"></i></a>
   </div>
 
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
@@ -115,6 +116,7 @@
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i>Blog</a>
     <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i>FAQ</a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#" onclick="showAdminLogin()" data-page="admin"><i class="fas fa-shield-alt"></i>Admin</a>
   </div>
 </nav>
 
@@ -159,5 +161,15 @@
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link){
       if (link.dataset.page === activePage) link.classList.add('active');
     });
+    
+    // Admin login function
+    window.showAdminLogin = function() {
+      const password = prompt('Enter admin password:');
+      if (password === 'admin123') {
+        window.open('http://localhost:8000/api/admin-panel/', '_blank');
+      } else if (password !== null) {
+        alert('Invalid password');
+      }
+    };
   })();
 </script>
