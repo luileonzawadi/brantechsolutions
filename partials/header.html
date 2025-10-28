@@ -62,6 +62,203 @@
   .mobile-menu a { display: flex; align-items: center; padding: 14px 16px; border-radius: 12px; text-decoration: none; font-weight: 500; color: var(--text-light); font-size: 1rem; gap: 12px; }
   .mobile-menu a:hover, .mobile-menu a.active { background: var(--brantech-gradient); color: #fff; }
 
+  /* Admin Login Modal */
+  .admin-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .admin-modal-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 0;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+  }
+  
+  .admin-modal-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .admin-modal-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-modal-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .admin-modal-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .admin-modal-body {
+    padding: 2rem;
+  }
+  
+  .admin-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-form-label {
+    display: block;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .admin-form-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .admin-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .admin-form-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  }
+  
+  .admin-form-input.error {
+    border-color: #ff6b6b;
+    animation: shake 0.5s ease;
+  }
+  
+  .admin-error {
+    display: none;
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #ff6b6b;
+  }
+  
+  .admin-modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .admin-btn {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .admin-btn-primary {
+    background: linear-gradient(45deg, #00d4ff, #00ffb3);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  }
+  
+  .admin-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+  }
+  
+  .admin-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .admin-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .admin-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
   /* Responsive */
   @media (min-width: 1024px) { .header-ticker { display: block; } }
   @media (max-width: 768px) {
@@ -71,6 +268,8 @@
     .mobile-menu { display: block; }
     .brand { font-size: 1.3rem; }
     .logo { height: 36px; width: 36px; }
+    .admin-modal-content { width: 95%; max-width: 380px; }
+    .admin-modal-body { padding: 1.5rem; }
   }
 </style>
 
@@ -120,6 +319,51 @@
   </div>
 </nav>
 
+<!-- Admin Login Modal -->
+<div id="adminLoginModal" class="admin-modal">
+  <div class="admin-modal-content">
+    <button class="admin-close" onclick="closeAdminModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="admin-modal-header">
+      <div class="admin-modal-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h2 class="admin-modal-title">Admin Access</h2>
+      <p class="admin-modal-subtitle">Enter your credentials to access the admin panel</p>
+    </div>
+    
+    <div class="admin-modal-body">
+      <div class="admin-form-group">
+        <label class="admin-form-label" for="adminPassword">
+          <i class="fas fa-lock"></i> Password
+        </label>
+        <input 
+          type="password" 
+          id="adminPassword" 
+          class="admin-form-input" 
+          placeholder="Enter admin password"
+          autocomplete="current-password"
+        >
+        <div id="loginError" class="admin-error">
+          <i class="fas fa-exclamation-triangle"></i>
+          Invalid password. Please try again.
+        </div>
+      </div>
+      
+      <div class="admin-modal-actions">
+        <button class="admin-btn admin-btn-secondary" onclick="closeAdminModal()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+        <button class="admin-btn admin-btn-primary" onclick="handleAdminLogin()">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   (function initHeader(){
     const modernHeader = document.getElementById('modernHeader');
@@ -164,12 +408,41 @@
     
     // Admin login function
     window.showAdminLogin = function() {
-      const password = prompt('Enter admin password:');
+      document.getElementById('adminLoginModal').style.display = 'flex';
+      document.getElementById('adminPassword').focus();
+    };
+    
+    // Admin login modal functions
+    window.closeAdminModal = function() {
+      document.getElementById('adminLoginModal').style.display = 'none';
+      document.getElementById('adminPassword').value = '';
+      document.getElementById('loginError').style.display = 'none';
+    };
+    
+    window.handleAdminLogin = function() {
+      const password = document.getElementById('adminPassword').value;
+      const errorDiv = document.getElementById('loginError');
+      
       if (password === 'admin123') {
+        closeAdminModal();
         window.open('http://localhost:8000/api/admin-panel/', '_blank');
-      } else if (password !== null) {
-        alert('Invalid password');
+      } else {
+        errorDiv.style.display = 'block';
+        document.getElementById('adminPassword').classList.add('error');
+        setTimeout(() => {
+          document.getElementById('adminPassword').classList.remove('error');
+        }, 500);
       }
     };
+    
+    // Enter key support
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && document.getElementById('adminLoginModal').style.display === 'flex') {
+        handleAdminLogin();
+      }
+      if (e.key === 'Escape') {
+        closeAdminModal();
+      }
+    });
   })();
 </script>
