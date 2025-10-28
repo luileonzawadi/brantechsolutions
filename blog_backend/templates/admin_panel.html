@@ -15,25 +15,25 @@
                 <h1 class="text-xl font-bold">BranTech Admin</h1>
             </div>
             <nav class="mt-8">
-                <a href="#" onclick="showSection('dashboard')" class="nav-link block px-4 py-2 hover:bg-gray-700 active">
+                <a href="#" onclick="showSection('dashboard', this)" class="nav-link block px-4 py-2 hover:bg-gray-700 active">
                     <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
                 </a>
-                <a href="#" onclick="showSection('blogs')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('blogs', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-blog mr-2"></i>Blog Posts
                 </a>
-                <a href="#" onclick="showSection('projects')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('projects', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-project-diagram mr-2"></i>Projects
                 </a>
-                <a href="#" onclick="showSection('events')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('events', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-calendar-alt mr-2"></i>Events
                 </a>
-                <a href="#" onclick="showSection('analytics')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('analytics', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-chart-bar mr-2"></i>Analytics
                 </a>
-                <a href="#" onclick="showSection('users')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('users', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-users mr-2"></i>Users
                 </a>
-                <a href="#" onclick="showSection('settings')" class="nav-link block px-4 py-2 hover:bg-gray-700">
+                <a href="#" onclick="showSection('settings', this)" class="nav-link block px-4 py-2 hover:bg-gray-700">
                     <i class="fas fa-cog mr-2"></i>Settings
                 </a>
             </nav>
@@ -280,10 +280,10 @@
     </div>
 
     <script>
-        const API_BASE = '/api';
+        const API_BASE = 'http://localhost:8000/api';
         
         // Navigation
-        function showSection(sectionName) {
+        function showSection(sectionName, clickedElement) {
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.add('hidden');
             });
@@ -291,8 +291,14 @@
                 link.classList.remove('active', 'bg-gray-700');
             });
             
-            document.getElementById(sectionName).classList.remove('hidden');
-            event.target.classList.add('active', 'bg-gray-700');
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active', 'bg-gray-700');
+            }
             
             if (sectionName === 'blogs') loadBlogs();
             if (sectionName === 'projects') loadProjects();
@@ -304,12 +310,22 @@
 
         // Form management
         function showAddForm(type) {
-            document.getElementById(`${type}Form`).classList.remove('hidden');
+            const formContainer = document.getElementById(`${type}Form`);
+            if (formContainer) {
+                formContainer.classList.remove('hidden');
+            }
         }
 
         function hideAddForm(type) {
-            document.getElementById(`${type}Form`).classList.add('hidden');
-            document.getElementById(`add${type.charAt(0).toUpperCase() + type.slice(1)}Form`).reset();
+            const formContainer = document.getElementById(`${type}Form`);
+            const form = document.getElementById(`add${type.charAt(0).toUpperCase() + type.slice(1)}Form`);
+            
+            if (formContainer) {
+                formContainer.classList.add('hidden');
+            }
+            if (form) {
+                form.reset();
+            }
         }
 
         // Load dashboard data

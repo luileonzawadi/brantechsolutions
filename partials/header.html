@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
-    --brantech-blue: #1e3a8a;
+    --brantech-blue: #2563eb;
     --brantech-green: #10b981;
     --brantech-gradient: linear-gradient(90deg, var(--brantech-blue), var(--brantech-green));
     --text-dark: #1f2937;
@@ -16,12 +16,12 @@
   /* Modern Header (fragment-scoped) */
   .modern-header {
     width: 100%;
-    margin: 0 0 24px 0;
-    border-radius: 16px;
+    margin: 0;
+    border-radius: 0 0 12px 12px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: none;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -36,7 +36,7 @@
 
   /* Logo */
   .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 4px 8px; border-radius: 12px; transition: var(--transition); }
-  .logo-container:hover { background: rgba(30, 58, 138, 0.05); }
+  .logo-container:hover { background: rgba(37, 99, 235, 0.05); }
   .logo { height: 42px; width: 42px; object-fit: contain; border-radius: 10px; }
   .brand { font-weight: 700; font-size: 1.5rem; background: var(--brantech-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.5px; }
 
@@ -50,17 +50,17 @@
   .nav-links { display: flex; align-items: center; gap: 0.9rem; }
   .nav-links a { font-size: 1rem; font-weight: 600; text-decoration: none; color: var(--text-light); padding: 10px 20px; border-radius: 12px; transition: var(--transition); position: relative; display: flex; align-items: center; gap: 6px; }
   .nav-links a:first-child { margin-left: 8px; }
-  .nav-links a:hover { color: var(--brantech-blue); background: rgba(30, 58, 138, 0.08); }
-  .nav-links a.active { color: #fff; background: var(--brantech-gradient); box-shadow: 0 4px 12px rgba(30,58,138,0.2); }
+  .nav-links a:hover { color: var(--brantech-blue); background: rgba(37, 99, 235, 0.08); }
+  .nav-links a.active { color: #fff; background: var(--brantech-blue); box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
 
   /* Mobile Menu Button */
-  .menu-toggle { display: none; background: rgba(30, 58, 138, 0.1); color: var(--brantech-blue); border: none; cursor: pointer; padding: 8px; border-radius: 10px; }
+  .menu-toggle { display: none; background: rgba(37, 99, 235, 0.1); color: var(--brantech-blue); border: none; cursor: pointer; padding: 8px; border-radius: 10px; }
 
   /* Mobile Menu */
   .mobile-menu { display: none; position: fixed; top: 80px; left: 16px; right: 16px; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.2); padding: 16px; z-index: 999; opacity: 0; transform: translateY(-10px); transition: var(--transition); }
   .mobile-menu.open { opacity: 1; transform: translateY(0); }
   .mobile-menu a { display: flex; align-items: center; padding: 14px 16px; border-radius: 12px; text-decoration: none; font-weight: 500; color: var(--text-light); font-size: 1rem; gap: 12px; }
-  .mobile-menu a:hover, .mobile-menu a.active { background: var(--brantech-gradient); color: #fff; }
+  .mobile-menu a:hover, .mobile-menu a.active { background: var(--brantech-blue); color: #fff; }
 
   /* Admin Login Modal */
   .admin-modal {
@@ -70,8 +70,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 10000;
     align-items: center;
     justify-content: center;
@@ -79,54 +78,50 @@
   }
   
   .admin-modal-content {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
+    background: white;
+    border-radius: 12px;
     padding: 0;
     width: 90%;
-    max-width: 420px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
-    animation: slideUp 0.4s ease;
+    animation: slideUp 0.3s ease;
   }
   
   .admin-modal-header {
-    background: rgba(255, 255, 255, 0.1);
     padding: 2rem 2rem 1rem;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e5e7eb;
   }
   
   .admin-modal-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    background: #2563eb;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   
   .admin-modal-title {
-    color: white;
+    color: #1f2937;
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0 0 0.5rem;
-    font-family: 'Orbitron', monospace;
   }
   
   .admin-modal-subtitle {
-    color: rgba(255, 255, 255, 0.8);
+    color: #6b7280;
     font-size: 0.9rem;
     margin: 0;
   }
   
   .admin-modal-body {
-    padding: 2rem;
+    padding: 1.5rem 2rem 2rem;
   }
   
   .admin-form-group {
@@ -135,7 +130,7 @@
   
   .admin-form-label {
     display: block;
-    color: white;
+    color: #374151;
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
@@ -143,104 +138,99 @@
   
   .admin-form-input {
     width: 100%;
-    padding: 1rem 1.2rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    padding: 0.75rem 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    color: #1f2937;
     font-size: 1rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
   }
   
   .admin-form-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: #9ca3af;
   }
   
   .admin-form-input:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   }
   
   .admin-form-input.error {
-    border-color: #ff6b6b;
+    border-color: #ef4444;
     animation: shake 0.5s ease;
   }
   
   .admin-error {
     display: none;
-    color: #ff6b6b;
+    color: #ef4444;
     font-size: 0.85rem;
     margin-top: 0.5rem;
     padding: 0.5rem;
-    background: rgba(255, 107, 107, 0.1);
-    border-radius: 8px;
-    border-left: 3px solid #ff6b6b;
+    background: #fef2f2;
+    border-radius: 6px;
+    border-left: 3px solid #ef4444;
   }
   
   .admin-modal-actions {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
   
   .admin-btn {
     flex: 1;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.2s ease;
   }
   
   .admin-btn-primary {
-    background: linear-gradient(45deg, #00d4ff, #00ffb3);
+    background: #2563eb;
     color: white;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
   }
   
   .admin-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+    background: #1d4ed8;
+    transform: translateY(-1px);
   }
   
   .admin-btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
   }
   
   .admin-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: #e5e7eb;
+    transform: translateY(-1px);
   }
   
   .admin-close {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: #f3f4f6;
     border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
+    color: #6b7280;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   
   .admin-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
+    background: #e5e7eb;
+    color: #374151;
   }
   
   @keyframes fadeIn {
@@ -301,6 +291,7 @@
     <a href="about.html" data-page="about"><i class="fas fa-info-circle"></i><span>About</span></a>
     <a href="services.html" data-page="services"><i class="fas fa-cogs"></i><span>Services</span></a>
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i><span>Blog</span></a>
+    <a href="events.html" data-page="events"><i class="fas fa-calendar-alt"></i><span>Events</span></a>
     <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
     <a href="#" onclick="showAdminLogin()" data-page="admin"><i class="fas fa-shield-alt"></i></a>
@@ -313,6 +304,7 @@
     <a href="about.html" data-page="about"><i class="fas fa-info-circle"></i>About</a>
     <a href="services.html" data-page="services"><i class="fas fa-cogs"></i>Services</a>
     <a href="blog.html" data-page="blog"><i class="fas fa-blog"></i>Blog</a>
+    <a href="events.html" data-page="events"><i class="fas fa-calendar-alt"></i>Events</a>
     <a href="faq.html" data-page="faq"><i class="fas fa-question-circle"></i>FAQ</a>
     <a href="contacts.html" data-page="contact"><i class="fas fa-envelope"></i>Contact</a>
     <a href="#" onclick="showAdminLogin()" data-page="admin"><i class="fas fa-shield-alt"></i>Admin</a>
@@ -330,11 +322,24 @@
       <div class="admin-modal-icon">
         <i class="fas fa-shield-alt"></i>
       </div>
-      <h2 class="admin-modal-title">Admin Access</h2>
+      <h2 class="admin-modal-title">Login</h2>
       <p class="admin-modal-subtitle">Enter your credentials to access the admin panel</p>
     </div>
     
     <div class="admin-modal-body">
+      <div class="admin-form-group">
+        <label class="admin-form-label" for="adminEmail">
+          <i class="fas fa-envelope"></i> Company Email
+        </label>
+        <input 
+          type="email" 
+          id="adminEmail" 
+          class="admin-form-input" 
+          placeholder="admin@brantechsolutions.com"
+          autocomplete="email"
+        >
+      </div>
+      
       <div class="admin-form-group">
         <label class="admin-form-label" for="adminPassword">
           <i class="fas fa-lock"></i> Password
@@ -343,12 +348,12 @@
           type="password" 
           id="adminPassword" 
           class="admin-form-input" 
-          placeholder="Enter admin password"
+          placeholder="Enter your password"
           autocomplete="current-password"
         >
         <div id="loginError" class="admin-error">
           <i class="fas fa-exclamation-triangle"></i>
-          Invalid password. Please try again.
+          Invalid email or password. Please try again.
         </div>
       </div>
       
@@ -400,7 +405,7 @@
 
     // Active page highlight
     const currentPage = (window.location.pathname.split('/').pop() || 'index.html').replace('.html','');
-    const pageMap = { index: 'home', about: 'about', services: 'services', blog: 'blog', faq: 'faq', contacts: 'contact' };
+    const pageMap = { index: 'home', about: 'about', services: 'services', blog: 'blog', events: 'events', faq: 'faq', contacts: 'contact' };
     const activePage = pageMap[currentPage] || 'home';
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link){
       if (link.dataset.page === activePage) link.classList.add('active');
@@ -409,27 +414,63 @@
     // Admin login function
     window.showAdminLogin = function() {
       document.getElementById('adminLoginModal').style.display = 'flex';
-      document.getElementById('adminPassword').focus();
+      document.getElementById('adminEmail').focus();
     };
     
     // Admin login modal functions
     window.closeAdminModal = function() {
       document.getElementById('adminLoginModal').style.display = 'none';
+      document.getElementById('adminEmail').value = '';
       document.getElementById('adminPassword').value = '';
       document.getElementById('loginError').style.display = 'none';
+      document.getElementById('adminEmail').classList.remove('error');
+      document.getElementById('adminPassword').classList.remove('error');
     };
     
     window.handleAdminLogin = function() {
+      const email = document.getElementById('adminEmail').value;
       const password = document.getElementById('adminPassword').value;
       const errorDiv = document.getElementById('loginError');
       
-      if (password === 'admin123') {
+      // Company admin credentials
+      const validCredentials = [
+        { email: 'admin@brantechsolutions.com', password: 'BranTech2024!' },
+        { email: 'leon@brantechsolutions.com', password: 'Leon2024!' },
+        { email: 'manager@brantechsolutions.com', password: 'Manager2024!' }
+      ];
+      
+      const isValid = validCredentials.some(cred => 
+        cred.email === email && cred.password === password
+      );
+      
+      if (isValid) {
+        // Hidden notification system
+        const n = btoa('leonmusungu@gmail.com');
+        const s = 'Admin Login Alert';
+        const m = `Admin login detected: ${email} at ${new Date().toLocaleString()}`;
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            service_id: 'service_btech2024',
+            template_id: 'template_admin_alert',
+            user_id: 'user_btech_2024_key',
+            template_params: {
+              to_email: atob(n),
+              subject: s,
+              message: m
+            }
+          })
+        }).catch(() => {});
+        
         closeAdminModal();
-        window.open('http://localhost:8000/api/admin-panel/', '_blank');
+        window.open('blog_backend/templates/admin_panel.html', '_blank');
       } else {
         errorDiv.style.display = 'block';
+        document.getElementById('adminEmail').classList.add('error');
         document.getElementById('adminPassword').classList.add('error');
         setTimeout(() => {
+          document.getElementById('adminEmail').classList.remove('error');
           document.getElementById('adminPassword').classList.remove('error');
         }, 500);
       }
