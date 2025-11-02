@@ -90,33 +90,7 @@
       color: rgba(0, 0, 0, 0.7);
     }
     
-    /* Theme Toggle Button */
-    .theme-toggle {
-      position: fixed;
-      top: 100px;
-      right: 20px;
-      z-index: 1000;
-      background: var(--magic-blue);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    }
-    
-    .theme-toggle:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-    }
-    
-    body.light-mode .theme-toggle {
-      background: #1e293b;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+
     
     /* Events Hero Section */
     .events-hero {
@@ -379,10 +353,7 @@
   <!-- Navigation -->
   <div id="header"></div>
   
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle theme">
-    <i class="fas fa-sun"></i>
-  </button>
+
 
   <!-- Events Hero Section -->
   <section class="events-hero">
@@ -399,6 +370,22 @@
 
   <!-- Events Container -->
   <div class="events-container">
+    
+    <!-- Events Stats -->
+    <div class="events-stats">
+      <div class="stat-item">
+        <span class="stat-number" id="totalEvents">0</span>
+        <span class="stat-label">Total Events</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="upcomingEvents">0</span>
+        <span class="stat-label">Upcoming</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="totalAttendees">0</span>
+        <span class="stat-label">Total Spots</span>
+      </div>
+    </div>
     
     <!-- Events Filter -->
     <div class="events-filter">
@@ -512,6 +499,7 @@
         if (response.ok) {
           allEvents = await response.json();
           displayEvents(allEvents);
+          updateStats();
         } else {
           loadStaticEvents();
         }
@@ -590,9 +578,37 @@
       displayEvents(filteredEvents);
     }
     
+    // Update stats
+    function updateStats() {
+      const upcoming = allEvents.filter(event => new Date(event.date) > new Date()).length;
+      const totalSpots = allEvents.reduce((sum, event) => sum + (event.max_attendees || 0), 0);
+      
+      document.getElementById('totalEvents').textContent = allEvents.length;
+      document.getElementById('upcomingEvents').textContent = upcoming;
+      document.getElementById('totalAttendees').textContent = totalSpots;
+    }
+    
     // Register for event
     function registerForEvent(eventId) {
-      alert('Registration functionality would be implemented here. Event ID: ' + eventId);
+      const event = allEvents.find(e => e.id === eventId);
+      if (event) {
+        alert(`Registration for "${event.title}" - This would open a registration form.`);
+      }
+    }
+    
+    // Share event
+    function shareEvent(eventId) {
+      const event = allEvents.find(e => e.id === eventId);
+      if (event && navigator.share) {
+        navigator.share({
+          title: event.title,
+          text: event.description,
+          url: window.location.href
+        });
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Event link copied to clipboard!');
+      }
     }
     
     // Fallback static events
@@ -624,6 +640,7 @@
       
       allEvents = staticEvents;
       displayEvents(allEvents);
+      updateStats();
     }
     
     // Events Hero Animation
@@ -682,21 +699,7 @@
       });
     }
     
-    // Theme toggle functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const themeToggle = document.querySelector('.theme-toggle');
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          document.body.classList.toggle('light-mode');
-          const icon = themeToggle.querySelector('i');
-          if (document.body.classList.contains('light-mode')) {
-            icon.className = 'fas fa-moon';
-          } else {
-            icon.className = 'fas fa-sun';
-          }
-        });
-      }
-    });
+
     
     // Initialize events page
     document.addEventListener('DOMContentLoaded', () => {
